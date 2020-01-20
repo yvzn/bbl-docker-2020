@@ -1,0 +1,43 @@
+# bbl-docker-2020
+Initiation à Docker.
+
+La présentation se trouve dans le fichier presentation.adoc
+
+Elle peut être visualisée
+https://yvzn.github.io/bbl-docker-2020[sur Github pages].
+
+## Setup
+
+L'affichage des slides utilise le framework de présentation
+https://revealjs.com/[RevealJS] avec le 
+https://github.com/asciidoctor/asciidoctor-reveal.js/[backend pour asciidoc].
+
+Pour récupérer le code source:
+
+[source,bash]
+----
+$ git clone --recurse-submodules https://github.com/yvzn/bbl-docker-2020.git
+$ cd bbl-docker-2020
+----
+
+## Convertir en HTML
+
+La présentation est au format asciidoc. Elle peut être convertie
+au format HTML avec https://nodejs.org/en/download/[NodeJS] :
+
+[source,bash]
+----
+$ npm install
+$ npm run build
+----
+
+Puis affichée dans un navigateur.
+
+## Licensing
+
+Le texte de cette présentation est sous licence MIT.
+
+Cette présentation utilise :
+
+* du code source libre sous licence MIT (RevealJS) 
+* des images libres sous licence Creative Commons (CC0)

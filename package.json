@@ -1,0 +1,30 @@
+{
+  "name": "bbl-docker-2020",
+  "version": "1.0.0",
+  "description": "Initiation à Docker.",
+  "main": "presentation.html",
+  "watch": {
+    "build": "*.adoc"
+  },
+  "scripts": {
+    "build:presentation": "asciidoctor-revealjs presentation.adoc",
+    "build": "npm run build:presentation",
+    "watch": "npm-watch",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yvzn/bbl-docker-2020.git"
+  },
+  "keywords": [],
+  "author": "Yvan Razafindramanana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yvzn/bbl-docker-2020/issues"
+  },
+  "homepage": "https://github.com/yvzn/bbl-docker-2020#readme",
+  "dependencies": {
+    "@asciidoctor/reveal.js": "^3.1.0",
+    "asciidoctor": "^2.0.3"
+  }
+}

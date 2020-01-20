@@ -1,0 +1,190 @@
+= Initiation
+:imagesdir: assets/images
+:revealjs_theme: night
+:customcss: assets/css/presentation.css
+
+image::docker_horizontal_large.png[]
+
+par la pratique
+
+[NOTE.speaker]
+--
+C'est quoi |
+comment ça marche ? |
+prés° 100% pratique
+--
+
+== Docker ?
+
+[%step]
+* Créer
+* Lancer
+* Déployer des *conteneurs* 
+
+image::vernon-raineil-cenzon-364156.jpg[background]
+
+[NOTE.speaker]
+--
+gratuit |
+Multi OS
+--
+
+== Conteneur ?
+
+[%step]
+* Une appli + config + dépendances
+* Package autonome
+* Exécution isolée
+** Processeur
+** Mémoire
+** Fichiers
+
+image::chuttersnap-418291.jpg[background]
+
+[NOTE.speaker]
+--
+une définition |
+hérité de Linux |
+support natif dispo
+--
+
+== Démo !
+
+* Lancer un conteneur
+* Kitematic + alpine-node
+
+image::computer-1895383_1920.jpg[background]
+
+[NOTE.speaker]
+--
+*autonome* | *isolé* |
+afficher l'heure |
+lancer vi |
+npm i -g node-games |
+node-games snake
+--
+
+== Image ?
+
+[%step]
+* "Description" du conteneur
+* Construction par couches
+** Images de base (contexte)
+** Dépendances
+** Applis
+
+image::16743940721_86774e08d0_h.jpg[background]
+
+[NOTE.speaker]
+--
+Portable |
+multi enviro |
+ROM émulateur = nbx usages
+--
+
+== Image ?
+
+[%step]
+* https://hub.docker.com/explore/[Docker hub]
+* Nombreuses images disponibles
+
+[NOTE.speaker]
+--
+Kitematic
+--
+
+image::16743940721_86774e08d0_h.jpg[background]
+
+== Pour faire quoi ?
+
+[%step]
+* Tester un language
+* une appli
+* un framework
+
+[NOTE.speaker]
+--
+Environnement isolé |
+Ne pas surcharger son poste
+--
+
+== Démo !
+
+* Démarrer une application
+* Jupyter notebook + Tensorflow
+
+image::computer-1895383_1920.jpg[background]
+
+[NOTE.speaker]
+--
+Démarrage |
+Mappage de Ports |
+Lancer Jupyter |
+Supprimer la complexité
+--
+
+== Pour faire quoi ?
+
+[%step]
+* Pour un besoin ponctuel
+* Sans rien installer !
+* Reproductible
+
+[NOTE.speaker]
+--
+anecdote PHP |
+Partager avec ses collègues
+--
+
+== Queqles commandes de base
+pull, run, exec, ps, stop, rm, rmi ...
+
+== Démo !
+
+* Docker CLI
+* PHP
+
+image::computer-1895383_1920.jpg[background]
+
+== Avantages	
+
+[%step]
+* Facilité d'exécution
+* Même image + multiples environnements
+* Stable + Portable + Reproductible
+
+[NOTE.speaker]
+--
+Usage découverte
+--
+
+== Est si... ?
+
+[%step]
+* Construire ses propres images
+* Deployer facilement
+* Cibler la prod
+
+[NOTE.speaker]
+--
+Reproductible + multi enviro => pousser le concept |
+Packager son appli + config + dépendances ? |
+Automatiser 
+--
+
+== Le Dockerfile
+
+[%step]
+* Permet de créer ses propres images
+* Construction par couches
+
+image::vegetable-2982363_1920.jpg[background]
+
+== Le Dockerfile
+
+[%step]
+* FROM, MAINTAINER, ADD, COPY, VOLUME, RUN, CMD ...
+* .dockerignore
+
+image::vegetable-2982363_1920.jpg[background]
+
