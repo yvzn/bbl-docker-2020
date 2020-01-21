@@ -1,4 +1,4 @@
-= Initiation
+= Docker
 :imagesdir: assets/images
 :revealjs_theme: night
 :customcss: assets/css/presentation.css
@@ -9,78 +9,102 @@ par la pratique
 
 [NOTE.speaker]
 --
-C'est quoi |
-comment ça marche ? |
-prés° 100% pratique
+Introduction
 --
 
 == Docker ?
 
 [%step]
 * Créer
-* Lancer
-* Déployer des *conteneurs* 
+* et lancer
+* des *conteneurs* 
 
 image::vernon-raineil-cenzon-364156.jpg[background]
 
 [NOTE.speaker]
 --
-gratuit |
-Multi OS
+2 choses |
+format et runtime
 --
 
-== Conteneur ?
+== Créer un conteneur ?
 
 [%step]
-* Une appli + config + dépendances
-* Package autonome
-* Exécution isolée
-** Processeur
-** Mémoire
-** Fichiers
+* Une application
+* Configuration
+* Dépendances
+* Binaire autonome
 
 image::chuttersnap-418291.jpg[background]
 
 [NOTE.speaker]
 --
-une définition |
-hérité de Linux |
-support natif dispo
+ma définition |
+dépendances au sens large
 --
+
+== Lancer un conteneur ?
+
+[%step]
+* Exécution isolée
+* Processeur
+* Mémoire
+* Fichiers
+
+image::chuttersnap-418291.jpg[background]
+
+[NOTE.speaker]
+--
+rootless containers
+--
+
+== Installation !
+
+[%step]
+* https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-hyper-v-using-powershell[Activer Hyper-V]
+* https://support.microsoft.com/en-us/help/3159635/windows-10-update-assistant[Mettre à jour Windows]
+* https://www.docker.com/products/docker-desktop[Docker.com]
+* Proxy
+
+image::computer-1895383_1920.jpg[background]
 
 == Démo !
 
+[%step]
 * Lancer un conteneur
-* Kitematic + alpine-node
+* https://download.docker.com/kitematic/Kitematic-Windows.zip[Kitematic]
+* ubuntu
 
 image::computer-1895383_1920.jpg[background]
 
 [NOTE.speaker]
 --
-*autonome* | *isolé* |
-afficher l'heure |
-lancer vi |
-npm i -g node-games |
-node-games snake
+Catalogue d'images
 --
 
 == Image ?
 
 [%step]
 * "Description" du conteneur
-* Construction par couches
-** Images de base (contexte)
-** Dépendances
-** Applis
+* Format portable 
 
 image::16743940721_86774e08d0_h.jpg[background]
 
 [NOTE.speaker]
 --
-Portable |
-multi enviro |
+conteneur = instance |
 ROM émulateur = nbx usages
 --
+
+== Image ?
+
+[%step]
+* Construction par couches
+* Images de base (contexte)
+* Dépendances
+* Applis
+
+image::16743940721_86774e08d0_h.jpg[background]
 
 == Image ?
 
@@ -90,7 +114,9 @@ ROM émulateur = nbx usages
 
 [NOTE.speaker]
 --
-Kitematic
+Inscription nécessaire |
+Kitematic |
+Hubs privés
 --
 
 image::16743940721_86774e08d0_h.jpg[background]
@@ -98,20 +124,20 @@ image::16743940721_86774e08d0_h.jpg[background]
 == Pour faire quoi ?
 
 [%step]
-* Tester un language
+* Tester une stack
 * une appli
-* un framework
 
 [NOTE.speaker]
 --
-Environnement isolé |
+Environnement isolé | 
+Sandbox |
 Ne pas surcharger son poste
 --
 
 == Démo !
 
 * Démarrer une application
-* Jupyter notebook + Tensorflow
+* SQL Server
 
 image::computer-1895383_1920.jpg[background]
 
@@ -119,7 +145,6 @@ image::computer-1895383_1920.jpg[background]
 --
 Démarrage |
 Mappage de Ports |
-Lancer Jupyter |
 Supprimer la complexité
 --
 
@@ -127,13 +152,13 @@ Supprimer la complexité
 
 [%step]
 * Pour un besoin ponctuel
-* Sans rien installer !
+* Réduire les installations
 * Reproductible
 
 [NOTE.speaker]
 --
-anecdote PHP |
-Partager avec ses collègues
+PHP |
+Partager des binaires
 --
 
 == Queqles commandes de base
@@ -144,9 +169,14 @@ pull, run, exec, ps, stop, rm, rmi ...
 * Docker CLI
 * PHP
 
+[NOTE.speaker]
+--
+Explication des commandes
+--
+
 image::computer-1895383_1920.jpg[background]
 
-== Avantages	
+== Avantages
 
 [%step]
 * Facilité d'exécution
@@ -167,8 +197,8 @@ Usage découverte
 
 [NOTE.speaker]
 --
-Reproductible + multi enviro => pousser le concept |
-Packager son appli + config + dépendances ? |
+Avantages intéressants |
+Packager son appli |
 Automatiser 
 --
 
@@ -176,6 +206,7 @@ Automatiser
 
 [%step]
 * Permet de créer ses propres images
+* Versioné avec le code
 * Construction par couches
 
 image::vegetable-2982363_1920.jpg[background]
@@ -183,8 +214,26 @@ image::vegetable-2982363_1920.jpg[background]
 == Le Dockerfile
 
 [%step]
-* FROM, MAINTAINER, ADD, COPY, VOLUME, RUN, CMD ...
-* .dockerignore
+* FROM
+* ADD
+* VOLUME
+* RUN
+* ...
 
 image::vegetable-2982363_1920.jpg[background]
+
+== Le Dockerfile
+
+[%step]
+* build
+* publish
+
+image::vegetable-2982363_1920.jpg[background]
+
+== Démo !
+
+* Constuire une image
+* Lancer un conteneur
+
+image::computer-1895383_1920.jpg[background]
 
