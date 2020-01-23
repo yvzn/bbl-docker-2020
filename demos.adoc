@@ -3,18 +3,34 @@
 
 == Installation
 
+Ouvrir les sites
+
 Hyper-V::
 	Vérifier dans menu "démarrer"
 Mettre à jour windows 🧭::
 	`PS> winver` 
-Docker::
-	Chocolatey
+Installer Docker::
+	Inscription...
+	Chocolatey ?
 Proxy 🧭::
 	Montrer parametres
 
 == Démo n°1
 
-===  Kitematic + ubuntu
+=== Images Docker
+
+docker hub::
+	https://hub.docker.com/explore/
+
+===  ubuntu
+
+Pour démarrer l'image
+
+[source]
+----
+docker pull ubuntu:latest
+docker run -it --rm ubuntu
+----
 
 afficher l'os::
 	uname -a
@@ -22,19 +38,6 @@ afficher l'heure::
 	date
 lancer vi::
 
-Pour démarrer l'image
-
-[source]
-----
-docker pull ubuntu
-docker run -it --rm ubuntu
-----
-
-== Images Docker
-
-docker hub::
-	https://hub.docker.com/explore/
-	
 == Démo n°2
 
 === SQL Server
@@ -44,8 +47,16 @@ Pour démarrer l'image
 [source]
 ----
 docker pull mcr.microsoft.com/mssql/server:2019-latest
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=*****' -p 1433:1433 --name sql1 -d mcr.microsoft.com/mssql/server:2019-latest
-docker exec -it sql1 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P *****
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password123' -p 1433:1433 --name my_sql_server -d mcr.microsoft.com/mssql/server:2019-latest
+docker exec -it my_sql_server /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Password123
+----
+
+Commandes
+
+[source,sql]
+----
+SELECT name, database_id, create_date FROM sys.databases;
+GO
 ----
 
 == Démo n°3
@@ -62,7 +73,7 @@ docker ps
 docker stop
 docker rm
 docker run -d -p 80:80 --name my-php-app php:7.4-apache
-docker run -d -p 80:80 --name my-php-app -v ${PWD}:/var/www/html php:7.4-apache
+docker run -d -p 80:80 --name my-php-app -v ${PWD}/demos:/var/www/html php:7.4-apache
 docker exec -it my-php-app bash 
 docker ps
 ----
@@ -74,14 +85,16 @@ Exemple de fichier index.php
 <?php phpinfo();
 ----
 
+http://localhost/
+
 == Démo n°4
 
 === Build
 
 [source]
 ----
-docker build
-docker run 
+docker build . -t hello_world
+docker run -p 80:80 hello_world
 ----
 
 === Nettoyer

@@ -9,10 +9,11 @@ par la pratique
 
 [NOTE.speaker]
 --
-Introduction
+Introduction 🗃️ |
+Session
 --
 
-== Docker ?
+== Docker
 
 [%step]
 * Créer
@@ -24,13 +25,13 @@ image::vernon-raineil-cenzon-364156.jpg[background]
 [NOTE.speaker]
 --
 2 choses |
-format et runtime
+format conteneurs + runtime
 --
 
-== Créer un conteneur ?
+== Conteneur
 
 [%step]
-* Une application
+* Application
 * Configuration
 * Dépendances
 * Binaire autonome
@@ -39,11 +40,10 @@ image::chuttersnap-418291.jpg[background]
 
 [NOTE.speaker]
 --
-ma définition |
 dépendances au sens large
 --
 
-== Lancer un conteneur ?
+== Lancer
 
 [%step]
 * Exécution isolée
@@ -55,185 +55,222 @@ image::chuttersnap-418291.jpg[background]
 
 [NOTE.speaker]
 --
-rootless containers
+!! rootless containers
 --
 
-== Installation !
+== Installation
 
 [%step]
 * https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-hyper-v-using-powershell[Activer Hyper-V]
 * https://support.microsoft.com/en-us/help/3159635/windows-10-update-assistant[Mettre à jour Windows]
-* https://www.docker.com/products/docker-desktop[Docker.com]
-* Proxy
-
-image::computer-1895383_1920.jpg[background]
-
-== Démo !
-
-[%step]
-* Lancer un conteneur
-* https://download.docker.com/kitematic/Kitematic-Windows.zip[Kitematic]
-* ubuntu
+* Installer https://www.docker.com/products/docker-desktop[Docker desktop]
+* Configurer le proxy
 
 image::computer-1895383_1920.jpg[background]
 
 [NOTE.speaker]
 --
-Catalogue d'images
+demos.adoc
 --
 
-== Image ?
+== Image
 
 [%step]
-* "Description" du conteneur
-* Format portable 
+* _Description_ du conteneur
+* Format portable et composable
 
 image::16743940721_86774e08d0_h.jpg[background]
 
 [NOTE.speaker]
 --
-conteneur = instance |
-ROM émulateur = nbx usages
+conteneur = instance
 --
 
-== Image ?
+== Image
 
 [%step]
 * Construction par couches
-* Images de base (contexte)
-* Dépendances
-* Applis
+* Images de base
+* Fichiers spécifiques
+* Paramétrages 
 
 image::16743940721_86774e08d0_h.jpg[background]
 
-== Image ?
+[NOTE.speaker]
+--
+Arguments, variables d'env...
+--
+
+== Image
 
 [%step]
-* https://hub.docker.com/explore/[Docker hub]
-* Nombreuses images disponibles
+* Repository https://hub.docker.com/explore/[Docker hub]
+* OS (Linux, Windows)
+* frameworks 
+* applications
 
 [NOTE.speaker]
 --
-Inscription nécessaire |
-Kitematic |
-Hubs privés
+∃ Solutions repositories privés (Harbor) ou Cloud
 --
 
 image::16743940721_86774e08d0_h.jpg[background]
 
-== Pour faire quoi ?
+== Démo n°1
 
 [%step]
-* Tester une stack
-* une appli
-
-[NOTE.speaker]
---
-Environnement isolé | 
-Sandbox |
-Ne pas surcharger son poste
---
-
-== Démo !
-
-* Démarrer une application
-* SQL Server
+* Trouver et récupérer une image
+* Lancer un conteneur
 
 image::computer-1895383_1920.jpg[background]
 
 [NOTE.speaker]
 --
-Démarrage |
-Mappage de Ports |
-Supprimer la complexité
+demos.adoc |
+Catalogue d'images |
+Tags & versions |
+∃ https://download.docker.com/kitematic/Kitematic-Windows.zip[Kitematic]
+
 --
 
-== Pour faire quoi ?
+== Dév Env
 
 [%step]
-* Pour un besoin ponctuel
-* Réduire les installations
-* Reproductible
+* Setup de développement
+* Simplifier les installations
 
 [NOTE.speaker]
 --
-PHP |
-Partager des binaires
+Stack indisponible (Ruby pour asciidoc) |
+Installation complexe (Kafka) |
+Environnement isolé 
 --
-
-== Queqles commandes de base
-pull, run, exec, ps, stop, rm, rmi ...
-
-== Démo !
-
-* Docker CLI
-* PHP
-
-[NOTE.speaker]
---
-Explication des commandes
---
-
-image::computer-1895383_1920.jpg[background]
 
 == Avantages
 
 [%step]
-* Facilité d'exécution
-* Même image + multiples environnements
-* Stable + Portable + Reproductible
+* Facilité de mise en oeuvre
+* Portable & multi-environnements
+* Reproductible
 
 [NOTE.speaker]
 --
-Usage découverte
+Partager des configurations infra | 
+database + logs + messaging
 --
+
+== Démo n°2
+
+* Démarrer SQL Server
+
+image::computer-1895383_1920.jpg[background]
+
+[NOTE.speaker]
+--
+Mappage de Ports |
+Nommage
+--
+
+== Commandes de base
+
+[%step]
+* `docker pull`
+* `docker run`, `docker exec`
+* `docker ps`, `docker stop`
+* `docker rm`, `docker rmi`
+* ...
+
+[NOTE.speaker]
+--
+CLI essentiellement
+--
+
+== Démo n°3
+
+[%step]
+* Docker CLI
+* Commandes de base
+
+image::computer-1895383_1920.jpg[background]
 
 == Est si... ?
 
 [%step]
 * Construire ses propres images
-* Deployer facilement
+* Packager et deployer facilement
 * Cibler la prod
 
 [NOTE.speaker]
 --
-Avantages intéressants |
-Packager son appli |
-Automatiser 
+Avantages |
+Automatisation
 --
 
 == Le Dockerfile
 
 [%step]
-* Permet de créer ses propres images
-* Versioné avec le code
+* Créer ses propres images
+* Ficher versionné
 * Construction par couches
 
 image::vegetable-2982363_1920.jpg[background]
 
-== Le Dockerfile
+== Instructions de base
 
 [%step]
-* FROM
-* ADD
-* VOLUME
-* RUN
+* `FROM`
+* `ADD`
+* `RUN`
+* `CMD`, `ENTRYPOINT`
 * ...
 
 image::vegetable-2982363_1920.jpg[background]
 
+[NOTE.speaker]
+--
+Images de base |
+Fichiers spécifiques |
+Paramétrages |
+Point d'entrée |
+Stratégies de build
+--
+
 == Le Dockerfile
 
 [%step]
-* build
-* publish
+* `docker build`
+* `docker publish`
 
 image::vegetable-2982363_1920.jpg[background]
 
-== Démo !
+[NOTE.speaker]
+--
+tags / versions
+--
 
+== Démo n°4
+
+[%step]
 * Constuire une image
 * Lancer un conteneur
+* Nettoyer
 
 image::computer-1895383_1920.jpg[background]
+
+== Conclusion
+
+[%step]
+* Créer et lancer des *conteneurs* 
+* Setup de développement
+
+image::vernon-raineil-cenzon-364156.jpg[background]
+
+[NOTE.speaker]
+--
+Partie 2
+--
+
+== Questions
+
+image::camylla-battani-AoqgGAqrLpU-unsplash.jpg[background]
 

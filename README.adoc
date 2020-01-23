@@ -1,7 +1,10 @@
 # bbl-docker-2020
 Initiation à Docker.
 
-La présentation se trouve dans le fichier presentation.adoc (au format asciidoc)
+La présentation se trouve dans le fichier presentation.adoc
+
+Elle peut être visualisée
+https://yvzn.github.io/bbl-docker-2020[sur Github pages].
 
 ## Setup
 
@@ -38,3 +41,4 @@ Cette présentation utilise :
 
 * du code source libre sous licence MIT (RevealJS) 
 * des images libres sous licence Creative Commons (CC0)
+** (source http://www.pixabay.com/[Pixabay] ou http://www.unsplash.com/[Unsplash])
