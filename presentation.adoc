@@ -31,7 +31,7 @@ format conteneurs + runtime
 == Conteneur
 
 [%step]
-* Application
+* Instance d'application
 * Configuration
 * Dépendances
 * Binaire autonome
@@ -83,7 +83,7 @@ image::16743940721_86774e08d0_h.jpg[background]
 
 [NOTE.speaker]
 --
-conteneur = instance
+conteneur = instance image
 --
 
 == Image
@@ -111,7 +111,7 @@ Arguments, variables d'env...
 
 [NOTE.speaker]
 --
-∃ Solutions repositories privés (Harbor) ou Cloud
+∃ Solutions repositories privés (Harbor) ou Cloud (ACR)
 --
 
 image::16743940721_86774e08d0_h.jpg[background]
@@ -130,7 +130,18 @@ demos.adoc |
 Catalogue d'images |
 Tags & versions |
 ∃ https://download.docker.com/kitematic/Kitematic-Windows.zip[Kitematic]
+--
 
+== Démo n°2
+
+* Démarrer SQL Server
+
+image::computer-1895383_1920.jpg[background]
+
+[NOTE.speaker]
+--
+Mappage de Ports |
+Nommage
 --
 
 == Dév Env
@@ -159,25 +170,13 @@ Partager des configurations infra |
 database + logs + messaging
 --
 
-== Démo n°2
-
-* Démarrer SQL Server
-
-image::computer-1895383_1920.jpg[background]
-
-[NOTE.speaker]
---
-Mappage de Ports |
-Nommage
---
-
 == Commandes de base
 
 [%step]
-* `docker pull`
-* `docker run`, `docker exec`
-* `docker ps`, `docker stop`
-* `docker rm`, `docker rmi`
+* `docker pull` : Récupérer une image
+* `docker run`, `docker exec` : Lancer une conteneur
+* `docker ps`, `docker stop` : Gérer les conteneurs
+* `docker rm`, `docker rmi` : Nettoyage
 * ...
 
 [NOTE.speaker]
@@ -193,11 +192,11 @@ CLI essentiellement
 
 image::computer-1895383_1920.jpg[background]
 
-== Est si... ?
+== Mes propres images
 
 [%step]
-* Construire ses propres images
-* Packager et deployer facilement
+* Construire
+* Packager et deployer
 * Cibler la prod
 
 [NOTE.speaker]
@@ -218,10 +217,10 @@ image::vegetable-2982363_1920.jpg[background]
 == Instructions de base
 
 [%step]
-* `FROM`
-* `ADD`
-* `RUN`
-* `CMD`, `ENTRYPOINT`
+* `FROM` : Image de base
+* `COPY` : Ajouter des fichiers
+* `RUN` : Lancer une instruction
+* `CMD`, `ENTRYPOINT` : Démarrage du conteneur
 * ...
 
 image::vegetable-2982363_1920.jpg[background]
@@ -238,8 +237,10 @@ Stratégies de build
 == Le Dockerfile
 
 [%step]
-* `docker build`
-* `docker publish`
+* `docker build` : Construire
+* `docker publish` : Publier
+* `docker tag` : Versionner
+* ...
 
 image::vegetable-2982363_1920.jpg[background]
 

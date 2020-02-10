@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build:presentation": "asciidoctor-revealjs presentation.adoc",
-    "build": "npm run build:presentation",
+    "build:part2": "asciidoctor-revealjs presentation.part2.adoc",
+    "build": "npm run build:presentation && npm run build:part2",
     "watch": "npm-watch",
     "start": "http-server"
   },

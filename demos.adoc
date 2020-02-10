@@ -1,4 +1,4 @@
-= Initiation Docker
+== Initiation Docker
 :source-highlighter: rouge
 
 == Installation
@@ -36,9 +36,9 @@ afficher l'os::
 	uname -a
 afficher l'heure::
 	date
-lancer vi::
+lancer vi
 
-== Démo n°2
+== Démo n°2 
 
 === SQL Server
 

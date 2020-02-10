@@ -1,0 +1,48 @@
+= Docker
+:imagesdir: assets/images
+:revealjs_theme: night
+:customcss: assets/css/presentation.css
+
+image::docker_horizontal_large.png[]
+
+par la pratique
+
+[NOTE.speaker]
+--
+Partie 1
+--
+
+== Le Dockerfile
+
+[%step]
+* Créer ses propres images
+* Construction par couches
+
+image::vegetable-2982363_1920.jpg[background]
+
+== Démo n°4
+
+[%step]
+* Constuire une image
+* Lancer un conteneur
+
+image::computer-1895383_1920.jpg[background]
+
+[NOTE.speaker]
+--
+TODO:
+
+Dockerfile
+* volumes 
+* port
+* layers
+* CMD / ENTRYPOINT
+
+* multi stage build
+* dotnet / angular
+* logs
+
+Orchestration
+* docker compose
+
+--
