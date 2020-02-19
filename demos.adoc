@@ -105,3 +105,32 @@ docker image ls
 docker rmi
 docker image prune
 ----
+
+== Démo n°5
+
+[source,bash]
+----
+dotnet new webapi -n demo5
+dotnet publish -o out
+----
+
+[source]
+----
+docker build -f .\Dockerfile
+docker run -p 80:80 <<image id>>
+(iwr http://localhost:80/WeatherForecast).Content | ConvertTo-Json
+----
+
+https://github.com/dotnet/dotnet-docker/blob/master/samples/aspnetapp/Dockerfile
+
+== Démo n°6
+
+[source,bash]
+----
+npm init -y
+<<<copy ~/.npmrc>>>
+npm install parcel-bundler --save-dev
+new-item -Type File index.html
+new-item -Type File index.js
+npx parcel build index.html
+----

@@ -70,7 +70,8 @@ image::computer-1895383_1920.jpg[background]
 
 [NOTE.speaker]
 --
-demos.adoc
+demos.adoc |
+https://social.technet.microsoft.com/Forums/en-US/ee5b1d6b-09e2-49f3-a52c-820aafc316f9/hyperv-doesnt-work-after-upgrade-to-windows-10-1809#answers[Fix Hyper-V après mise à jour Windows]
 --
 
 == Image

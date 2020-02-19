@@ -39,7 +39,7 @@ Dockerfile
 * CMD / ENTRYPOINT
 
 * multi stage build
-* dotnet / angular
+* dotnet / webapp
 * logs
 
 Orchestration
